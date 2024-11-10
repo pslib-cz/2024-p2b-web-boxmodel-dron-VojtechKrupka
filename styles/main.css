@@ -1,0 +1,242 @@
+@layer reset, init, design;
+
+@import url(normalize.css) layer(reset);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap) layer(init);
+
+@layer init {
+    :root {
+        --primary: #66d4d4;
+        --text: #000000;
+        --black: #000000;
+        --light: #FFFFFF;
+        --gray: #3B3E40;
+    }
+    html {
+        font-family: "Open Sans", sans-serif;
+        color: var(--black);
+    }
+    .page__logo::before {
+        content: "";
+        display: block;
+        background: center / contain no-repeat transparent;
+        /*
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        */
+        background-image: url("../images/logo.svg");
+        width: auto;
+        height: 100%;
+        font-size: 1.5em;
+    }
+    .page__logo > span {
+        display: none;
+    }
+}
+
+/* VRSTVA PRO VAŠE STYLY */
+@layer design {
+   
+    .page__header{
+        background-image: url(../images/header-2560w.webp);
+        background-size: cover;
+        background-position: top left;
+        padding: calc(.75em + 4vw);
+        padding-top: 1em;
+    }
+    
+    .page__logo {
+        content: "";
+        display: block;
+        background: center / contain no-repeat transparent;
+        background-image: url("../images/logo.svg");
+        height: 2.5em;
+        margin-top: 0em;
+        font-size: 1.5em;
+    }
+    
+    .img-responsive {
+        display: block;
+        width: 100%;
+    }
+    
+    .button {
+        display: inline-block;
+        padding: 0.75em 2em;
+        text-decoration: none;
+        font-weight: bolder;
+        border-radius: 0.5em;
+    }
+
+    .button--secondary {
+        background-color: var(--light);
+        color: var(--black);
+    }
+
+    .button--secondary:hover {
+        background-color: var(--black);
+        color: var(--light);
+    }
+
+    .button--buy {
+        background-color: var(--primary);
+        color: var(--light);
+    }
+
+    .button--buy:hover {
+        background-color: var(--black);
+        color: var(--light);
+    }
+
+    .picture-box {
+        margin: 1em 0;
+    }
+
+    .picture-box__caption {
+        margin: 1em 0;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
+    .picture-box__caption--bold {
+        margin: 1em 0;
+        font-size: 1em;
+        text-align: center;
+    }
+    
+    .page__title{
+        font-size: 4.5em;
+        font-weight: 900;
+        margin: 0em;
+    }
+
+    .page__title__text {
+        font-weight: 100;
+        margin-bottom: 2em;
+    }
+
+    .highlight-box {
+        margin-top: 3em;
+        margin-bottom: 3em;
+        padding: 1em 2em 1em 2em; /* top right bottom left */
+        border: var(--primary) 2px solid;
+    }
+
+    .highlight-box--title {
+        font-weight: bolder;
+    }
+
+    .list > li {
+        margin: 1em 0;
+    }
+
+    .list > li::marker {
+        color: var(--primary);
+    }
+
+    .text-title {
+        font-weight: 700;
+        margin: 0;
+        font-size: calc(1em + 3vw);
+      }
+   
+      .text-title--big {
+        font-size: 2em; 
+        display: block;
+      }
+
+    .outline-box {
+        border: 3px solid var(--primary, aqua);
+        padding: 1em;
+        margin: 1em 0;
+      }
+   
+      .outline-box--jumbo {
+        border: none;
+        background-color: var(--gray, gray);
+        color: var(--light, white);
+        text-align: center;
+      }
+
+    .panel {
+        max-width: 17.5em;
+        display: inline-block;
+        vertical-align: 100%;
+    }
+
+    .paragraph {
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .gallery {
+        --marginOkraj: 1em;
+        margin: calc(-1 * var(--marginOkraj));
+    }
+
+    .gallery__item {
+        display: inline-block;
+        width: calc(100% - 2 * var(--marginOkraj));
+        margin: var(--marginOkraj);
+    }
+
+    @media screen and (min-width: 768px) {
+        .gallery_item--50w{
+            width: calc(50% - 2 * var(--marginOkraj));
+        }
+    }
+
+    .page__header {
+        padding-top: 30em;
+        padding-left: calc(1em + 5%);
+        padding-bottom: calc(1em + 5%);
+        background-image: url("../images/header-2560w.webp");
+        background-size: cover;
+        background-position: top center;
+        color: var(--light);
+    }
+
+    .section__title {
+        font-size: 2em;
+    }
+
+    .page__section {
+        padding: 1em;
+    }
+
+    .page__intro {
+        color: var(--light, white);
+        margin-top: 10vh;
+        max-width: 768px;
+    }
+
+    .img-responsive {
+        display: block;
+        width: 100%;
+    }
+
+    .page__content{
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .link {
+        color: var(--primary, teal);
+        text-decoration: none;
+    }
+
+    .link:hover {
+        text-decoration: underline;
+    }
+
+    .link--inverted {
+        color: var(--light, white);
+    }
+
+    .page__footer {
+        background-color: var(--gray, gray);
+        color: var(--light, white);
+        padding: 2em;
+        text-align: center;
+    }
+}
